@@ -44,8 +44,16 @@ interface Donor {
 //   Performer_id,
 //   Performer_title,
 // }) => {
-export default function EditPerformer({ donor }) {
-  console.log(donor);
+export default function EditPerformer({
+  donor_id,
+  donor_fname,
+  donor_lname,
+  donor_amount,
+  donor_performerBouquet,
+  donor_performerRose,
+  donor_performerID,
+}) {
+  //console.log(donor);
   //const { Performer_id } = props;
   //const { Performer_title } = props;
   // const donor_id = donor.donor_id;
@@ -130,37 +138,37 @@ export default function EditPerformer({ donor }) {
               <VStack>
                 <Input
                   {...register("donor_id")}
-                  defaultValue={donor.donor_id}
+                  defaultValue={donor_id}
                   readOnly={true}
                 ></Input>
                 <Input
                   {...register("donor_fname")}
-                  defaultValue={donor.donor_fname}
+                  defaultValue={donor_fname}
                 ></Input>
 
                 <Input
                   {...register("donor_lname")}
-                  defaultValue={donor.donor_lname}
+                  defaultValue={donor_lname}
                 ></Input>
 
                 <Input
                   {...register("donor_amount")}
-                  defaultValue={"" + donor.donor_amount}
+                  defaultValue={"" + donor_amount}
                 ></Input>
 
                 <Input
                   {...register("donor_performerBouquet")}
-                  defaultValue={donor.donor_performerBouquet}
+                  defaultValue={donor_performerBouquet}
                 ></Input>
 
                 <Input
                   {...register("donor_performerRose")}
-                  defaultValue={donor.donor_performerRose}
+                  defaultValue={donor_performerRose}
                 ></Input>
 
                 <Input
                   {...register("donor_performerID")}
-                  defaultValue={donor.donor_performerID}
+                  defaultValue={donor_performerID}
                 ></Input>
 
                 <Button type="submit" colorScheme="blue" w="300px">

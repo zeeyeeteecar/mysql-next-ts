@@ -62,7 +62,15 @@ export default function FindDonor({ donors }) {
               <Text w="50px">{donor.donor_performerRose}</Text>
               <Text w="50px">{donor.donor_performerID}</Text>
 
-              <DonorUpdate donor={donor} />
+              <DonorUpdate
+                donor_id={donor.donor_id}
+                donor_fname={donor.donor_fname}
+                donor_lname={donor.donor_lname}
+                donor_amount={donor.donor_amount}
+                donor_performerBouquet={donor.donor_performerBouquet}
+                donor_performerRose={donor.donor_performerRose}
+                donor_performerID={donor.donor_performerID}
+              />
               <IconButton
                 variant="outline"
                 colorScheme="gray"
