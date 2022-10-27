@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model performer {
+  Performer_id    Int     @id @default(autoincrement())
+  Performer_title String? @db.VarChar(50)
+
+  donors    donor[]
+}
+
+model donor {
+  donor_id               Int      @id @default(autoincrement())
+  donor_fname            String?  @db.VarChar(50)
+  donor_lname            String?  @db.VarChar(50)
+  donor_amount           Decimal? @db.Decimal(10, 2)
+  donor_performerBouquet Int?
+  donor_performerRose    Int?
+
+  performer   performer? @relation(fields: [donor_performerID], references: [Performer_id])
+  donor_performerID      Int?
+
+
+}
+
+
